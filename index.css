@@ -1,0 +1,126 @@
+/* Reset básico e variáveis de cores do Valorant */
+:root {
+    --vermelho-valorant: #ff4655;
+    --preto-fundo: #11141a;
+    --cinza-card: #1f2326;
+    --branco-gelo: #ece8e1;
+    --cinza-texto: #7e7e7e;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--preto-fundo);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    /* Linhas de grade sutis no fundo simulando o menu do jogo */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Container principal com estética militar/industrial */
+.valorant-card {
+    background-color: var(--cinza-card);
+    width: 380px;
+    padding: 30px;
+    border: 1px solid rgba(236, 232, 225, 0.1);
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Detalhe angular vermelho no topo do card */
+.card-border-detail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background-color: var(--vermelho-valorant);
+}
+
+.tag-agente {
+    color: var(--vermelho-valorant);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.titulo-valorant {
+    color: var(--branco-gelo);
+    font-size: 42px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.subtitulo-valorant {
+    color: var(--cinza-texto);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.descricao {
+    color: var(--branco-gelo);
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+/* Botão com corte diagonal (feito com clip-path) e efeito de preenchimento */
+.btn-valorant {
+    background-color: transparent;
+    border: 1px solid var(--branco-gelo);
+    color: var(--branco-gelo);
+    padding: 15px 30px;
+    width: 100%;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.2s ease;
+    /* Corta o canto superior esquerdo e inferior direito */
+    clip-path: polygon(8% 0%, 100% 0%, 100% 70%, 92% 100%, 0% 100%, 0% 30%);
+}
+
+/* Efeito de preenchimento vermelho ao passar o mouse */
+.btn-valorant::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--vermelho-valorant);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.btn-valorant:hover {
+    color: var(--preto-fundo);
+    border-color: var(--vermelho-valorant);
+}
+
+.btn-valorant:hover::before {
+    left: 0;
+}
+
+.btn-texto {
+    position: relative;
+    z-index: 1;
+}
