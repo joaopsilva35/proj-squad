@@ -9,10 +9,9 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0b0b0d; /* Fundo ultra escuro */
+    background-color: #0b0b0d;
     color: #f1f1f3;
     line-height: 1.7;
-    padding-bottom: 4rem;
 }
 
 /* ==========================================
@@ -43,7 +42,7 @@ body {
 }
 
 .logo .highlight {
-    color: #9871ff; /* Roxo neon */
+    color: #9871ff;
 }
 
 .nav-menu a {
@@ -54,9 +53,9 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-menu a:hover, 
+.nav-menu a:hover,
 .nav-menu a.active {
-    color: #04d361; /* Verde ativo */
+    color: #04d361;
 }
 
 /* ==========================================
@@ -69,30 +68,31 @@ body {
 }
 
 h1 {
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     color: #ffffff;
     text-align: center;
     margin-bottom: 1.5rem;
     font-weight: 800;
+    display: block;
+    padding: 10px 0;
     background: linear-gradient(45deg, #9871ff, #04d361);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .description {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     color: #c4c4cc;
-    text-align: justify;
+    text-align: center;
     background: #121214;
-    padding: 2rem;
+    padding: 1.5rem 2rem;
     border-radius: 12px;
     border: 1px solid #202024;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
     margin-bottom: 4rem;
 }
 
 /* ==========================================
-4. CARDS DOS JOGOS (LISTA DETALHADA)
+4. CARDS DOS JOGOS (ESTRUTURA BASE)
    ========================================== */
 .games-list {
     display: flex;
@@ -104,16 +104,18 @@ h1 {
     background-color: #121214;
     border: 1px solid #202024;
     border-radius: 12px;
-    padding: 2rem;
+    overflow: hidden;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Efeitos de Hover avançados */
 .game-card:hover {
-    transform: translateY(-5px);
     border-color: #9871ff;
-    box-shadow: 0 10px 25px rgba(152, 113, 255, 0.15);
+    box-shadow: 0 10px 25px rgba(152, 113, 255, 0.12);
+}
+
+.card-visible-part {
+    padding: 2rem;
 }
 
 .card-header {
@@ -128,10 +130,8 @@ h1 {
 .card-header h2 {
     font-size: 1.8rem;
     color: #ffffff;
-    font-weight: 700;
 }
 
-/* Etiquetas/Badges Dinâmicas */
 .badge {
     padding: 0.35rem 0.8rem;
     border-radius: 20px;
@@ -146,7 +146,6 @@ h1 {
 .badge-puzzle { background-color: rgba(0, 224, 255, 0.15); color: #00e0ff; }
 .badge-strategy { background-color: rgba(152, 113, 255, 0.15); color: #9871ff; }
 
-/* Metadados (Data e Desenvolvedora) */
 .game-metadata {
     display: flex;
     gap: 2rem;
@@ -155,19 +154,101 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.game-metadata strong {
-    color: #c4c4cc;
-}
-
-/* Texto de Conteúdo */
 .game-content p {
     font-size: 1.05rem;
     color: #c4c4cc;
-    text-align: justify;
+    margin-bottom: 1.5rem;
+}
+
+.expand-btn {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid #29292e;
+    color: #e1e1e6;
+    padding: 0.75rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.expand-btn:hover {
+    color: #ffffff;
+    border-color: #9871ff;
+    background-color: rgba(152, 113, 255, 0.08);
+}
+
+.expand-btn .arrow {
+    font-size: 0.8rem;
+    transition: transform 0.2s;
 }
 
 /* ==========================================
-5. RODAPÉ (FOOTER)
+5. MECÂNICA SLIDE-DOWN (SISTEMA INTERATIVO)
+   ========================================== */
+.characters-drawer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    background-color: #16161a;
+    border-top: 0 solid #29292e;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+.characters-drawer.is-open {
+    border-top: 1px solid #29292e;
+}
+
+.drawer-inner {
+    padding: 2rem;
+}
+
+.drawer-inner h3 {
+    font-size: 1.2rem;
+    color: #9871ff;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.character-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+@media (max-width: 650px) {
+    .character-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.char-item {
+    background: #1f1f23;
+    padding: 1.25rem;
+    border-radius: 8px;
+    border-left: 3px solid #04d361;
+}
+
+.char-item h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+}
+
+.char-item p {
+    font-size: 0.95rem;
+    color: #a8a8b3;
+    line-height: 1.5;
+}
+
+/* ==========================================
+6. RODAPÉ (FOOTER)
    ========================================== */
 .main-footer {
     text-align: center;
@@ -176,4 +257,44 @@ h1 {
     border-top: 1px solid #1f1f23;
     color: #7c7c8a;
     font-size: 0.9rem;
+}
+
+/* ==========================================
+7. BOTÃO PRÓXIMA PÁGINA (NOVO)
+   ========================================== */
+.pagination-container {
+    display: flex;
+    justify-content: flex-end; /* Alinha o botão no canto inferior direito */
+    margin-top: 4rem;
+    padding: 0 0.5rem;
+}
+
+.next-page-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(45deg, #9871ff, #04d361); /* Gradiente roxo e verde */
+    color: #ffffff;
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(152, 113, 255, 0.25);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima do botão */
+.next-page-btn:hover {
+    transform: translateX(6px); /* Dá um pequeno empurrão indicando "avanço" */
+    box-shadow: 0 6px 22px rgba(4, 211, 97, 0.35);
+}
+
+.arrow-next {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.next-page-btn:hover .arrow-next {
+    transform: translateX(4px); /* A seta vai um pouco mais para a direita no hover */
 }
