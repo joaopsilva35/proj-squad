@@ -167,7 +167,7 @@
                 <div class="card-visible-part">
                     <div class="card-header">
                         <h2>Balatro</h2>
-                        <span class="badge badge-strategy">Estratégia / Roguelike</span>
+                        <span class="badge badge-strategy">Estrategia / Roguelike</span>
                     </div>
                     <div class="game-metadata">
                         <p><strong>Desenvolvedora:</strong> LocalThunk</p>
@@ -197,6 +197,13 @@
             </article>
 
         </section>
+
+        <div class="pagination-container">
+            <a href="pagina3.html" class="next-page-btn">
+                Próxima Página: Análises <span class="arrow-next">➔</span>
+            </a>
+        </div>
+
     </main>
 
     <footer class="main-footer">
@@ -210,7 +217,6 @@
                 const drawer = card.querySelector('.characters-drawer');
                 const arrow = button.querySelector('.arrow');
                 
-                // Alterna o estado ativo do painel interno
                 drawer.classList.toggle('is-open');
                 
                 if (drawer.classList.contains('is-open')) {
