@@ -1,126 +1,220 @@
-/* Reset básico e variáveis de cores do Valorant */
-:root {
-    --vermelho-valorant: #ff4655;
-    --preto-fundo: #11141a;
-    --cinza-card: #1f2326;
-    --branco-gelo: #ece8e1;
-    --cinza-texto: #7e7e7e;
-}
+/* Importando as fontes estilizadas estilo Valorant */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Teko:wght@500;700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    background-color: var(--preto-fundo);
+    background-color: #0f1923; /* Preto/Azul escuro do Valorant */
+    color: #ece8e1; /* Branco gelo do Valorant */
+    font-family: 'Oswald', sans-serif;
+    background-image: radial-gradient(circle, rgba(255, 70, 85, 0.1) 1%, transparent 80%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+h1 {
+    font-family: 'Teko', sans-serif;
+    font-size: 4rem;
+    color: #ff4655; /* Vermelho Valorant */
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    text-shadow: 3px 3px 0px #1f2326;
+}
+
+/* Esconder os inputs de rádio estruturais */
+input[type="radio"] {
+    display: none;
+}
+
+/* Menu de Seleção dos Agentes */
+.selector-menu {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.agent-btn {
+    background-color: #1f2326;
+    color: #ece8e1;
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%); /* Efeito chanfrado */
+}
+
+.agent-btn:hover {
+    background-color: #ff4655;
+    color: #0f1923;
+    border-color: #ff4655;
+}
+
+/* Container dos cards de informações */
+.agents-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 500px;
+}
+
+/* Card individual do agente (escondido por padrão) */
+.agent-card {
+    display: none;
+    background: linear-gradient(135deg, #1f2326 0%, #111417 100%);
+    border-left: 5px solid #ff4655;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    grid-template-columns: 1fr 1.5fr;
+    gap: 30px;
+    align-items: center;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Caixa da Foto do Agente */
+.agent-img-container {
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    overflow: hidden;
-    /* Linhas de grade sutis no fundo simulando o menu do jogo */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-    background-size: 20px 20px;
+    background: rgba(255, 46, 85, 0.05);
+    border: 1px solid rgba(255, 46, 85, 0.2);
+    padding: 10px;
 }
 
-/* Container principal com estética militar/industrial */
-.valorant-card {
-    background-color: var(--cinza-card);
-    width: 380px;
-    padding: 30px;
-    border: 1px solid rgba(236, 232, 225, 0.1);
-    position: relative;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+.agent-img-container img {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
 }
 
-/* Detalhe angular vermelho no topo do card */
-.card-border-detail {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 60px;
-    height: 4px;
-    background-color: var(--vermelho-valorant);
-}
-
-.tag-agente {
-    color: var(--vermelho-valorant);
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.titulo-valorant {
-    color: var(--branco-gelo);
-    font-size: 42px;
-    font-weight: 900;
-    letter-spacing: 1px;
-    line-height: 1;
+/* Informações de Texto do Agente */
+.agent-info h2 {
+    font-size: 3rem;
+    color: #fff;
     text-transform: uppercase;
+    margin-bottom: 5px;
 }
 
-.subtitulo-valorant {
-    color: var(--cinza-texto);
-    font-size: 12px;
-    font-weight: 700;
+.category {
+    display: inline-block;
+    background-color: #ff4655;
+    color: #fff;
+    padding: 4px 12px;
+    font-size: 0.9rem;
     text-transform: uppercase;
-    margin-bottom: 20px;
     letter-spacing: 1px;
+    margin-bottom: 25px;
+    font-weight: bold;
 }
 
-.descricao {
-    color: var(--branco-gelo);
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 30px;
-    opacity: 0.8;
+.skills-title {
+    font-size: 1.4rem;
+    color: #ff4655;
+    text-transform: uppercase;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
 }
 
-/* Botão com corte diagonal (feito com clip-path) e efeito de preenchimento */
-.btn-valorant {
-    background-color: transparent;
-    border: 1px solid var(--branco-gelo);
-    color: var(--branco-gelo);
-    padding: 15px 30px;
-    width: 100%;
-    font-weight: 700;
-    letter-spacing: 2px;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.2s ease;
-    /* Corta o canto superior esquerdo e inferior direito */
-    clip-path: polygon(8% 0%, 100% 0%, 100% 70%, 92% 100%, 0% 100%, 0% 30%);
+.skill-item {
+    margin-bottom: 15px;
 }
 
-/* Efeito de preenchimento vermelho ao passar o mouse */
-.btn-valorant::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background-color: var(--vermelho-valorant);
-    transition: left 0.3s ease;
-    z-index: -1;
+.skill-name {
+    font-weight: bold;
+    color: #ece8e1;
+    text-transform: uppercase;
+    font-size: 1.1rem;
 }
 
-.btn-valorant:hover {
-    color: var(--preto-fundo);
-    border-color: var(--vermelho-valorant);
+.skill-desc {
+    color: #a0a0a0;
+    font-size: 0.95rem;
+    margin-top: 2px;
+    line-height: 1.4;
 }
 
-.btn-valorant:hover::before {
-    left: 0;
+/* Lógica de Alternância: Mostra o card correto baseado no rádio ativo */
+#rad-omen:checked ~ .agents-container #card-omen,
+#rad-clove:checked ~ .agents-container #card-clove,
+#rad-cyper:checked ~ .agents-container #card-cyper,
+#rad-chamber:checked ~ .agents-container #card-chamber,
+#rad-raze:checked ~ .agents-container #card-raze,
+#rad-reyna:checked ~ .agents-container #card-reyna {
+    display: grid;
 }
 
-.btn-texto {
-    position: relative;
-    z-index: 1;
+/* Destaca visualmente o botão (label) do agente selecionado */
+#rad-omen:checked ~ .selector-menu label[for="rad-omen"],
+#rad-clove:checked ~ .selector-menu label[for="rad-clove"],
+#rad-cyper:checked ~ .selector-menu label[for="rad-cyper"],
+#rad-chamber:checked ~ .selector-menu label[for="rad-chamber"],
+#rad-raze:checked ~ .selector-menu label[for="rad-raze"],
+#rad-reyna:checked ~ .selector-menu label[for="rad-reyna"] {
+    background-color: #ff4655;
+    color: #0f1923;
+    border-color: #ff4655;
+    box-shadow: 0 0 15px rgba(255, 70, 85, 0.4);
+}
+
+/* --- Botão do Projeto do Diego (Canto Inferior Direito) --- */
+.btn-diego {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff4655;
+    color: #0f1923;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 70, 85, 0.3);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+}
+
+.btn-diego:hover {
+    background-color: #ece8e1;
+    color: #0f1923;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(236, 232, 225, 0.4);
+}
+
+/* Ajustes para telas de celulares e tablets */
+@media (max-width: 768px) {
+    .agent-card {
+        grid-template-columns: 1fr;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    .btn-diego {
+        position: static;
+        margin-top: 30px;
+        display: inline-block;
+        margin-bottom: 20px;
+    }
 }
