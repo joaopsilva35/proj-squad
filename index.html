@@ -3,32 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valorant Concept UI</title>
+    <title>Valorant Agents Selector</title>
     <link rel="stylesheet" href="index.css">
-    <!-- Importação da fonte Roboto para um visual limpo e moderno -->
-    <link href="https://googleapis.com" rel="stylesheet">
 </head>
 <body>
 
-    <div class="valorant-card">
-        <!-- Detalhe decorativo no topo que remete ao design do jogo -->
-        <div class="card-border-detail"></div>
-        
-        <div class="card-content">
-            <span class="tag-agente">AGENTE CADASTRADO</span>
-            <h1 class="titulo-valorant">JETT</h1>
-            <p class="subtitulo-valorant">Coreia do Sul // Duelista</p>
-            
-            <p class="descricao">
-                Representando sua terra natal, a Coreia do Sul, o estilo de luta ágil e evasivo de Jett permite que ela assuma riscos que ninguém mais consegue. Ela corre em meio a qualquer confronto, fatiando os inimigos antes mesmo que eles percebam quem os atacou.
-            </p>
-            
-            <!-- Botão com o corte diagonal clássico do Valorant -->
-            <button class="btn-valorant">
-                <span class="btn-texto">SELECIONAR AGENTE</span>
-            </button>
-        </div>
+    <h1>Selecione seu Agente</h1>
+
+    <input type="radio" name="agent-selector" id="rad-omen" checked>
+    <input type="radio" name="agent-selector" id="rad-clove">
+    <input type="radio" name="agent-selector" id="rad-cyper">
+    <input type="radio" name="agent-selector" id="rad-chamber">
+    <input type="radio" name="agent-selector" id="rad-raze">
+    <input type="radio" name="agent-selector" id="rad-reyna">
+
+    <div class="selector-menu">
+        <label for="rad-omen" class="agent-btn">Omen</label>
+        <label for="rad-clove" class="agent-btn">Clove</label>
+        <label for="rad-cyper" class="agent-btn">Cypher</label>
+        <label for="rad-chamber" class="agent-btn">Chamber</label>
+        <label for="rad-raze" class="agent-btn">Raze</label>
+        <label for="rad-reyna" class="agent-btn">Reyna</label>
     </div>
+
+    <div class="agents-container">
+
+        <div class="agent-card" id="card-omen">
+            <div class="agent-img-container">
+                <img src="https://static.wikia.nocookie.net/valorant/images/b/b0/Omen_artwork.png" alt="Omen">
+            </div>
+            <div class="agent-info">
+                <h2>Omen</h2>
+                <span class="category">Controlador (Smoke)</span>
+                <div class="skills-title">Habilidades</div>
+                <div class="skill-item">
+                    <div class="skill-name">E - Manto Sombrio</div>
+                    <div class="skill-desc">Lança uma esfera sombria que bloqueia a visão (Smoke). Pode ser posicionada através das paredes.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Q - Paranoia</div>
+                    <div class="skill-desc">Dispara um projétil sombrio adiante, cegando temporariamente todos os jogadores tocados por ele.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">X - Salto das Sombras (Ult)</div>
+                    <div class="skill-desc">Abre um mapa tático para se teletransportar instantaneamente para qualquer lugar do mapa.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-card" id="card-clove">
+            <div class="agent-img-container">
+                <img src="https://static.wikia.nocookie.net/valorant/images/2/2a/Clove_artwork.png" alt="Clove">
+            </div>
+            <div class="agent-info">
+                <h2>Clove</h2>
+                <span class="category">Controlador (Smoke)</span>
+                <div class="skills-title">Habilidades</div>
+                <div class="skill-item">
+                    <div class="skill-name">E - Artimanha</div>
+                    <div class="skill-desc">Cria nuvens de fumaça para bloquear a visão. Pode ser conjurada mesmo após a morte de Clove.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Q - Desvitalizar</div>
+                    <div class="skill-desc">Lança um fragmento de essência imortal que explode, aplicando dicionário (dano temporário) aos inimigos atingidos.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">X - Ainda Não (Ult)</div>
+                    <div class="skill-desc">Ao morrer, Clove pode ressuscitar instantaneamente, mas precisa conseguir um abate ou assistência em poucos segundos para continuar viva.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-card" id="card-cyper">
+            <div class="agent-img-container">
+                <img src="https://static.wikia.nocookie.net/valorant/images/8/88/Cypher_artwork.png" alt="Cypher">
+            </div>
+            <div class="agent-info">
+                <h2>Cypher</h2>
+                <span class="category">Sentinela</span>
+                <div class="skills-title">Habilidades</div>
+                <div class="skill-item">
+                    <div class="skill-name">E - Câmera de Vigilância</div>
+                    <div class="skill-desc">Posiciona uma câmera oculta. Ao reinstalar, pode atirar um dardo rastreador nos inimigos.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">C - Fio-Armadilha</div>
+                    <div class="skill-desc">Estica um fio invisível entre duas paredes. Inimigos que passarem ficam presos, revelados e tontos se não o destruírem.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">X - Assalto Neural (Ult)</div>
+                    <div class="skill-desc">Usa o chapéu em um cadáver inimigo fresco para revelar a localização atual de todos os sobreviventes adversários duas vezes.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-card" id="card-chamber">
+            <div class="agent-img-container">
+                <img src="https://static.wikia.nocookie.net/valorant/images/0/09/Chamber_artwork.png" alt="Chamber">
+            </div>
+            <div class="agent-info">
+                <h2>Chamber</h2>
+                <span class="category">Sentinela</span>
+                <div class="skills-title">Habilidades</div>
+                <div class="skill-item">
+                    <div class="skill-name">E - Encontro</div>
+                    <div class="skill-desc">Posiciona uma âncora de teletransporte no chão e consegue se mover instantaneamente até ela quando estiver no raio de alcance.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Q - Caçador de Cabeças</div>
+                    <div class="skill-desc">Equipa uma pistola pesada de alta precisão com mira de ferro integrada.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">X - Tour de Force (Ult)</div>
+                    <div class="skill-desc">Equipa um poderoso rifle de precisão personalizado que abate inimigos com um tiro no peito e cria um campo de lentidão.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-card" id="card-raze">
+            <div class="agent-img-container">
+                <img src="https://static.wikia.nocookie.net/valorant/images/c/c4/Raze_artwork.png" alt="Raze">
+            </div>
+            <div class="agent-info">
+                <h2>Raze</h2>
+                <span class="category">Duelista</span>
+                <div class="skills-title">Habilidades</div>
+                <div class="skill-item">
+                    <div class="skill-name">E - Cartuchos de Tinta</div>
+                    <div class="skill-desc">Lança uma granada de fragmentação que causa dano inicial e cria submunições que causam mais dano.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Q - Carga de Explosivo</div>
+                    <div class="skill-desc">Lança uma carga explosiva que gruda em superfícies e pode ser detonada para impulsionar a Raze ou causar dano.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">X - Estraga-Prazeres (Ult)</div>
+                    <div class="skill-desc">Equipa um lança-foguetes que causa dano massivo em área de impacto ao ser disparado.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="agent-card" id="card-reyna">
+            <div class="agent-img-container">
+                <img src="https://static.wikia.nocookie.net/valorant/images/b/b5/Reyna_artwork.png" alt="Reyna">
+            </div>
+            <div class="agent-info">
+                <h2>Reyna</h2>
+                <span class="category">Duelista</span>
+                <div class="skills-title">Habilidades</div>
+                <div class="skill-item">
+                    <div class="skill-name">C - Olhar Voraz</div>
+                    <div class="skill-desc">Lança um olho etéreo flutuante que cega temporariamente todos os inimigos que olharem direto para ele.</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">Q/E - Devorar / Dispensar</div>
+                    <div class="skill-desc">Consome orbes de alma de inimigos abatidos para se curar totalmente (Devorar) ou se tornar intangível/invisível por um breve momento (Dispensar).</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-name">X - Imperatriz (Ult)</div>
+                    <div class="skill-desc">Entra em um estado de frenesi, aumentando drasticamente a velocidade de disparo, recarga e troca de arma, além de destacar inimigos.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <a href="pagina-1.html" class="btn-diego">Ir para projeto de Diego</a>
 
 </body>
 </html>
