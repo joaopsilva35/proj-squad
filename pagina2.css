@@ -1,0 +1,179 @@
+/* ==========================================
+1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0b0b0d; /* Fundo ultra escuro */
+    color: #f1f1f3;
+    line-height: 1.7;
+    padding-bottom: 4rem;
+}
+
+/* ==========================================
+2. CABEÇALHO E MENU DE NAVEGAÇÃO
+   ========================================== */
+.main-header {
+    background-color: #121215;
+    border-bottom: 2px solid #1f1f23;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 1rem 2rem;
+}
+
+.header-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+.logo .highlight {
+    color: #9871ff; /* Roxo neon */
+}
+
+.nav-menu a {
+    color: #a8a8b3;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a:hover, 
+.nav-menu a.active {
+    color: #04d361; /* Verde ativo */
+}
+
+/* ==========================================
+3. ESTRUTURA E INTRODUÇÃO
+   ========================================== */
+.container {
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+h1 {
+    font-size: 2.8rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #9871ff, #04d361);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.description {
+    font-size: 1.15rem;
+    color: #c4c4cc;
+    text-align: justify;
+    background: #121214;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #202024;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 4rem;
+}
+
+/* ==========================================
+4. CARDS DOS JOGOS (LISTA DETALHADA)
+   ========================================== */
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.game-card {
+    background-color: #121214;
+    border: 1px solid #202024;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Efeitos de Hover avançados */
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #9871ff;
+    box-shadow: 0 10px 25px rgba(152, 113, 255, 0.15);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #29292e;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+}
+
+.card-header h2 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Etiquetas/Badges Dinâmicas */
+.badge {
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.badge-action { background-color: rgba(255, 75, 75, 0.15); color: #ff4b4b; }
+.badge-exploration { background-color: rgba(4, 211, 97, 0.15); color: #04d361; }
+.badge-precision { background-color: rgba(255, 180, 0, 0.15); color: #ffb400; }
+.badge-puzzle { background-color: rgba(0, 224, 255, 0.15); color: #00e0ff; }
+.badge-strategy { background-color: rgba(152, 113, 255, 0.15); color: #9871ff; }
+
+/* Metadados (Data e Desenvolvedora) */
+.game-metadata {
+    display: flex;
+    gap: 2rem;
+    font-size: 0.9rem;
+    color: #8d8d99;
+    margin-bottom: 1rem;
+}
+
+.game-metadata strong {
+    color: #c4c4cc;
+}
+
+/* Texto de Conteúdo */
+.game-content p {
+    font-size: 1.05rem;
+    color: #c4c4cc;
+    text-align: justify;
+}
+
+/* ==========================================
+5. RODAPÉ (FOOTER)
+   ========================================== */
+.main-footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 5rem;
+    border-top: 1px solid #1f1f23;
+    color: #7c7c8a;
+    font-size: 0.9rem;
+}
