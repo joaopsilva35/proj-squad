@@ -1,0 +1,230 @@
+:root {
+    --bg-principal: #0d0d0d;
+    --bg-card: #161616;
+    --bg-sidebar: #070707;
+    --texto-claro: #e0e0e0;
+    --texto-escuro: #a0a0a0;
+    --dourado: #c5a059;
+    --carmesim: #8b0000;
+    --azul-sekiro: #4a677d;
+    --laranja-ds1: #d9534f;
+    --bronze-ds2: #a76d2a;
+    --carvao-ds3: #5c5c5c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-principal);
+    color: var(--texto-claro);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+.layout-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 320px;
+    background-color: var(--bg-sidebar);
+    border-right: 2px solid #222;
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh; 
+}
+
+.sidebar-header h2 {
+    font-family: 'Cinzel', serif;
+    color: var(--dourado);
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.sidebar-header p {
+    font-size: 0.85rem;
+    color: var(--texto-escuro);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 30px 0;
+}
+
+.menu-item {
+    color: var(--texto-escuro);
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-left: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    color: #ffffff;
+    padding-left: 20px;
+    background: linear-gradient(to right, rgba(255,255,255,0.02), transparent);
+}
+
+.ds-btn:hover { border-left-color: var(--laranja-ds1); }
+.ds2-btn:hover { border-left-color: var(--bronze-ds2); }
+.ds3-btn:hover { border-left-color: var(--carvao-ds3); }
+.bb-btn:hover { border-left-color: var(--carmesim); }
+.sk-btn:hover { border-left-color: var(--azul-sekiro); }
+.er-btn:hover { border-left-color: var(--dourado); }
+
+.sidebar-footer {
+    font-size: 0.8rem;
+    color: #444;
+    font-style: italic;
+}
+
+.main-content {
+    flex: 1;
+    padding: 60px 50px;
+    background-image: radial-gradient(circle, #1a1a1a 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.main-header {
+    margin-bottom: 50px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
+}
+
+.main-header h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
+    color: #ffffff;
+}
+
+.lore-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.game-card {
+    background-color: var(--bg-card);
+    border: 1px solid #222;
+    border-radius: 4px;
+    padding: 40px;
+    scroll-margin-top: 40px; 
+    transition: border-color 0.3s;
+}
+
+.game-card h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.dark-souls { border-left: 4px solid var(--laranja-ds1); }
+.dark-souls-2 { border-left: 4px solid var(--bronze-ds2); }
+.dark-souls-3 { border-left: 4px solid var(--carvao-ds3); }
+.bloodborne { border-left: 4px solid var(--carmesim); }
+.sekiro { border-left: 4px solid var(--azul-sekiro); }
+.elden-ring { border-left: 4px solid var(--dourado); }
+
+.badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+.ds-badge { background-color: var(--laranja-ds1); color: #fff; }
+.ds2-badge { background-color: var(--bronze-ds2); color: #fff; }
+.ds3-badge { background-color: var(--carvao-ds3); color: #fff; }
+.bb-badge { background-color: var(--carmesim); color: #fff; }
+.sk-badge { background-color: var(--azul-sekiro); color: #fff; }
+.er-badge { background-color: var(--dourado); color: #000; }
+
+.game-card p {
+    color: var(--texto-escuro);
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.dlc-box {
+    background-color: #0d0d0d;
+    border: 1px solid #252525;
+    border-top: 2px solid var(--dourado);
+    padding: 20px 25px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+.dlc-box h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: var(--dourado);
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.dlc-box p {
+    font-size: 0.9rem;
+    color: #b0b0b0;
+    margin-bottom: 0;
+}
+
+.dlc-box.notice {
+    border-top-color: var(--azul-sekiro);
+}
+.dlc-box.notice h3 {
+    color: var(--azul-sekiro);
+}
+
+.main-footer {
+    margin-top: 60px;
+    text-align: center;
+    color: #444;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .layout-container { flex-direction: column; }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 2px solid #222;
+        padding: 30px 20px;
+    }
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .menu-item {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        border-left: none;
+    }
+    .main-content { padding: 30px 20px; }
+}
