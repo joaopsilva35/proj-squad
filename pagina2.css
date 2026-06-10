@@ -1,5 +1,5 @@
 /* ==========================================
-   1. RESET E CONFIGURAÇÕES GERAIS
+1. RESET E CONFIGURAÇÕES GERAIS
    ========================================== */
 * {
     margin: 0;
@@ -9,13 +9,13 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0b0b0d; 
+    background-color: #0b0b0d;
     color: #f1f1f3;
     line-height: 1.7;
 }
 
 /* ==========================================
-   2. CABEÇALHO E MENU DE NAVEGAÇÃO
+2. CABEÇALHO E MENU DE NAVEGAÇÃO
    ========================================== */
 .main-header {
     background-color: #121215;
@@ -53,13 +53,13 @@ body {
     transition: color 0.3s ease;
 }
 
-.nav-menu a:hover, 
+.nav-menu a:hover,
 .nav-menu a.active {
     color: #04d361;
 }
 
 /* ==========================================
-   3. ESTRUTURA E INTRODUÇÃO
+3. ESTRUTURA E INTRODUÇÃO
    ========================================== */
 .container {
     max-width: 900px;
@@ -92,7 +92,7 @@ h1 {
 }
 
 /* ==========================================
-   4. CARDS DOS JOGOS (ESTRUTURA BASE)
+4. CARDS DOS JOGOS (ESTRUTURA BASE)
    ========================================== */
 .games-list {
     display: flex;
@@ -104,7 +104,7 @@ h1 {
     background-color: #121214;
     border: 1px solid #202024;
     border-radius: 12px;
-    overflow: hidden; 
+    overflow: hidden;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -189,7 +189,7 @@ h1 {
 }
 
 /* ==========================================
-   5. MECÂNICA SLIDE-DOWN (SISTEMA INTERATIVO)
+5. MECÂNICA SLIDE-DOWN (SISTEMA INTERATIVO)
    ========================================== */
 .characters-drawer {
     max-height: 0;
@@ -232,7 +232,7 @@ h1 {
     background: #1f1f23;
     padding: 1.25rem;
     border-radius: 8px;
-    border-left: 3px solid #04d361; 
+    border-left: 3px solid #04d361;
 }
 
 .char-item h4 {
@@ -248,7 +248,7 @@ h1 {
 }
 
 /* ==========================================
-   6. RODAPÉ (FOOTER)
+6. RODAPÉ (FOOTER)
    ========================================== */
 .main-footer {
     text-align: center;
@@ -260,7 +260,7 @@ h1 {
 }
 
 /* ==========================================
-   7. BOTÃO PRÓXIMA PÁGINA (NOVO)
+7. BOTÃO PRÓXIMA PÁGINA (NOVO)
    ========================================== */
 .pagination-container {
     display: flex;

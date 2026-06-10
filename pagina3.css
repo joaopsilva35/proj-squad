@@ -1,5 +1,5 @@
 /* ==========================================
-   1. RESET E CONFIGURAÇÕES GERAIS
+1. RESET E CONFIGURAÇÕES GERAIS
    ========================================== */
 * {
     margin: 0;
@@ -14,8 +14,7 @@ body {
     line-height: 1.6;
 }
 
-/* ==========================================
-   2. CABEÇALHO E MENU
+/* ==========================================2. CABEÇALHO E MENU
    ========================================== */
 .main-header {
     background-color: #0f0f12;
@@ -52,13 +51,13 @@ body {
     transition: color 0.2s ease;
 }
 
-.nav-menu a:hover, 
+.nav-menu a:hover,
 .nav-menu a.active {
     color: #04d361;
 }
 
 /* ==========================================
-   3. INTRODUÇÃO
+3. INTRODUÇÃO
    ========================================== */
 .container {
     max-width: 900px;
@@ -90,7 +89,7 @@ h1 {
 }
 
 /* ==========================================
-   4. LAYOUT DOS CARDS
+4. LAYOUT DOS CARDS
    ========================================== */
 .games-list {
     display: flex;
@@ -190,7 +189,7 @@ h1 {
 }
 
 /* ==========================================
-   5. MENU EXPANSÍVEL (PERSONAGENS E IMAGENS)
+5. MENU EXPANSÍVEL (PERSONAGENS E IMAGENS)
    ========================================== */
 .characters-drawer {
     max-height: 0;
@@ -283,4 +282,101 @@ h1 {
     border-top: 1px solid #1c1c21;
     color: #62626e;
     font-size: 0.85rem;
+}
+
+@media (max-width: 900px) {
+    .layout-container { flex-direction: column; }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        border-right: none;
+        border-bottom: 2px solid #222;
+        padding: 30px 20px;
+    }
+    .sidebar-menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .menu-item {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+        border-left: none;
+    }
+    .main-content { padding: 30px 20px; }
+}
+
+/* BLOCO DE BOTÕES TOTALMENTE REESTILIZADO */
+.page-navigation {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.page-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Colunas simétricas */
+    gap: 8px;
+    margin-top: 5px;
+}
+
+/* O Botão Base (Estilo Ferro Forjado) */
+.page-btn {
+    background: linear-gradient(135deg, #1c1c1c 0%, #0d0d0d 100%);
+    color: var(--texto-escuro);
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-family: 'Cinzel', serif;
+    text-align: center;
+    padding: 12px 4px;
+    border: 1px solid #2a2a2a;
+    border-radius: 2px; /* Cantos levemente retos para ar medieval */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Linha de luz interna superior para dar volume 3D */
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+/* Efeito Hover (Descobrindo a Graça) */
+.page-btn:hover {
+    color: #ffffff;
+    border-color: var(--dourado);
+    background: linear-gradient(135deg, #252525 0%, #121212 100%);
+    /* Brilho dourado externo sutil */
+    box-shadow: 0 0 12px rgba(197, 160, 89, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transform: translateY(-1px); /* Leve flutuação */
+}
+
+/* Estado Ativo (Fogueira Acesa / Página Atual) */
+.page-btn.active {
+    background: linear-gradient(135deg, #1f190f 0%, #0a0805 100%);
+    color: var(--dourado);
+    border-color: var(--dourado);
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(197, 160, 89, 0.6); /* Texto brilha */
+    box-shadow: 0 0 15px rgba(197, 160, 89, 0.15), inset 0 0 8px rgba(197, 160, 89, 0.1);
+}
+
+/* Linha decorativa mágica que expande na base do botão */
+.page-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background-color: var(--dourado);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.page-btn:hover::after,
+.page-btn.active::after {
+    width: 70%;
+    left: 15%;
 }
