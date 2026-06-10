@@ -1,5 +1,6 @@
-/* Importando uma fonte moderna e limpa */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+/* Importando uma fonte com estilo mitológico/clássico */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
 
 * {
     margin: 0;
@@ -8,65 +9,100 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    background-color: #0b0b0b;
+    /* Fundo escuro com uma textura sutil de fumaça/cinzas via gradiente */
+    background: radial-gradient(circle, #1a1a1a 0%, #080808 100%);
+    color: #e0e0e0;
+    font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Degradê vivo e moderno */
-    background: linear-gradient(135deg, #0a8ce4, #000000, #00dfd8);
-    background-size: 300% 300%;
-    animation: gradientMove 10s ease infinite;
+    padding: 20px;
 }
 
-/* Animação suave para o fundo se mover */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-.card {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 40px;
-    border-radius: 24px;
-    box-shadow: 0 10px 30px rgba(48, 43, 43, 0.15);
+.container-epic {
     text-align: center;
-    max-width: 400px;
-    backdrop-filter: blur(10px);
+    max-width: 600px;
+    width: 100%;
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+/* Símbolo do Ômega em vermelho Kratos */
+.omega-symbol {
+    font-family: 'Cinzel', serif;
+    font-size: 5rem;
+    color: #8b0000; /* Vermelho Escuro/Sangue */
+    text-shadow: 0 0 15px rgba(139, 0, 0, 0.7);
+    display: block;
+    line-height: 1;
 }
 
 h1 {
-    color: #f8eded;
-    font-size: 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    color: #d4af37; /* Dourado envelhecido */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    margin-top: -10px;
+}
+
+.subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    color: #a5a5a5;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}
+
+.content-box {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid #333;
+    border-top: 3px solid #8b0000; /* Detalhe em vermelho na borda superior */
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-size: 1.4rem;
     margin-bottom: 15px;
-    background: linear-gradient(to right, #ffffff, #e7e7e7);
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+    font-style: italic;
 }
 
 p {
-    color: #ececec;
+    color: #b5b5b5;
+    line-height: 1.8;
     margin-bottom: 25px;
-    line-height: 1.6;
+    font-size: 1.05rem;
 }
 
-.btn-vibrante {
-    background: #ee0000;
-    color: rgb(206, 206, 206);
-    border: none;
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 5px 15px rgba(197, 197, 197, 0.4);
+.btn-gow {
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    background: #8b0000;
+    color: #fff;
+    padding: 12px 35px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 1px solid #5a0000;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(139, 0, 0, 0.4);
 }
 
-.btn-vibrante:hover {
-    transform: scale(1.05);
-    background: #ff0101;
-    box-shadow: 0 8px 20px rgba(255, 250, 250, 0.6);
+
+
+.btn-gow:hover {
+    background: #b30000;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(179, 0, 0, 0.8);
+    transform: translateY(-2px);
 }
